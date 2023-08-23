@@ -3,18 +3,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  devServer: {
-    port: 9000,
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
-  },
+  mode: 'production',
   entry: './src/step3-index.ts',
   output: {
-    filename: 'step3-bundle.js',
+    filename: 'step3.bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.mjs', '.css', '.ts'],
@@ -36,11 +29,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        use: 'ts-loader',
       },
     ],
   },
