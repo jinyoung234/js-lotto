@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start-step1": "ts-node -r tsconfig-paths/register src/step1-index.ts",
-    "start-step3": "webpack serve --open --config step3.config.js",
+    "start-step3": "webpack serve --open --config step3.dev.js",
+    "build-step3": "webpack --mode production --config step3.prod.js",
     "test": "jest --watch"
   },
   "jest": {
